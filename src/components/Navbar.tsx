@@ -28,22 +28,27 @@ const Header = () => {
  const navigation = [
     { name: 'header.home', href: '/' },
     { name: 'header.about', href: '/about' },
-    { name: 'header.services', href: '/services' },
+    { name: 'FIATA', href: '/fiata' },
   ];
 
   const moreNavigation = [
+    { name: 'header.FIATA Diploma', href: '/fiata-diploma' },
+    { name: 'header.Experts', href: '/experts' },
+    { name: 'header.FAQs', href: '/faqs' },
     { name: 'header.news', href: '/all-news' },
+    { name: 'header.mediaCentre', href: '/media-centre' },
     { name: 'header.contact', href: '/contact' },
-    { name: 'header.partnerships', href: '/partnerships' },
   ];
   const allNavigation = [
-      { name: 'header.home', href: '/' },
+    { name: 'header.home', href: '/' },
     { name: 'header.about', href: '/about' },
-    { name: 'header.services', href: '/services' },
+    { name: 'FIATA', href: '/fiata' },
+    { name: 'header.FIATA Diploma', href: '/fiata-diploma' },
+    { name: 'header.Experts', href: '/experts' },
+    { name: 'header.FAQs', href: '/faqs' },
     { name: 'header.news', href: '/all-news' },
+    { name: 'header.mediaCentre', href: '/media-centre' },
     { name: 'header.contact', href: '/contact' },
-    { name: 'header.partnerships', href: '/partnerships' },
-   
   ];
 
 
@@ -73,7 +78,10 @@ const Header = () => {
         <div className="flex justify-between items-center py-4">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-3">
-            <img src={logo} alt={t("header.associationName")} className="h-12 w-auto" />
+           <div className="flex flex-col items-center justify-center">
+             <img src={logo} alt={t("header.associationName")} className="h-12 w-auto" />
+             <p className="text-[10px] font-semibold text-gray-500 visible sm:hidden"> {t("header.associationName")}</p>
+             </div>
             <div className="hidden sm:block">
               <h1 className="text-lg md:text-xs lg:text-sm font-semibold text-gray-900"> 
                 {t("header.associationName")}
@@ -126,7 +134,7 @@ const Header = () => {
               </div>
             ) : (
               <Link
-                to="/login"
+                to="/member-login"
                 className="ml-8 bg-red-600 text-white px-2 py-2 rounded-md text-sm font-medium hover:bg-red-700 transition-colors"
               >
                 {t("header.memberLogin")}
@@ -223,7 +231,7 @@ const Header = () => {
                     <>
                       <div className="border-t my-2"></div>
                       <Link
-                        to="/login"
+                        to="/member-login"
                         className="block px-4 py-2 text-sm text-red-600 hover:bg-red-50"
                         onClick={() => setIsMoreOpen(false)}
                       >
